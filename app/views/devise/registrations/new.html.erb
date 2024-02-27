@@ -27,7 +27,7 @@
       <label class="form-text">ニックネーム</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) hibitumo太郎", maxlength:"40" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -50,6 +50,20 @@
       <span class="indispensable">必須</span>
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">役職</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :position, class:"input-default", id:"position", placeholder:"例) 部長", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">所属</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :affiliation, class:"input-default", id:"affiliation", placeholder:"例) 営業2課", maxlength:"40" %>
   </div>
   <div class='register-btn'>
     <%= f.submit "ユーザー登録" ,class:"register-red-btn" %>
