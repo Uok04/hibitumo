@@ -12,5 +12,12 @@ class User < ApplicationRecord
   validates :position, presence: true
   validates :affiliation, presence: true
 
+  # 商品画像が必須であることを検証
+  validate :validate_avatar_presence
+
+  def validate_avatar_presence
+    errors.add(:avatar, 'を添付してください') unless avatar.attached?
+  end
+
 end
 

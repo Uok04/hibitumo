@@ -15,6 +15,12 @@ describe 'ユーザー新規登録' do
   end
 
   context '新規登録できない場合' do
+    it 'プロフィール画像が空では登録できない' do
+      @user = FactoryBot.build(:user)
+      @user.avatar = ''
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Avatar can't be blank")
+    end
     it 'nicknameが空では登録できない' do
       @user = FactoryBot.build(:user)
       @user.nickname = ''
