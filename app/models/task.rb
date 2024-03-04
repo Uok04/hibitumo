@@ -10,6 +10,6 @@ class Task < ApplicationRecord
   validates :deadline, presence: true
 
   #ジャンルの選択が「---」の時は保存できないようにする
-  validetes :category_id, numericality: { other_than: 1 ,message: "can't be blank"}
+  validates :category_id, numericality: { other_than: 1 ,message: "can't be blank"}
 
 end
