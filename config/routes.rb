@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "users#index"
 
-  # get 'tasks/index'
-  # root to: "tasks#index"
+  resources :tasks, only: [:new]
+
 end
