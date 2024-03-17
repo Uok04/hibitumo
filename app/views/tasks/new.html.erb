@@ -1,0 +1,50 @@
+<%= render "shared/second-header"%>
+
+<%= form_with model: @task, url: tasks_path, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      New Task
+    </h1>
+  </div>
+
+   <%= render 'shared/error_messages', model: @task %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">タスク名</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :task_name, class:"input-default", id:"task_name", placeholder:"例) （株）タスク に 見積書を作成", maxlength:"40" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">タスク詳細</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :description, class:"input-default-task", id:"description", placeholder:"例) 割引率５%, 10% の２パターンを作成\n送信先(FAX番号, メールアドレス)\n（株）タスク 部長 日々積 様", maxlength:"500" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">カテゴリー</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"task-category"})%>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">期日</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.date_field :deadline, class:"input-default", id:"deadline" %>
+  </div>
+  <div class='register-btn'>
+    <%= f.submit "タスク登録" ,class:"register-red-btn" %>
+  </div>
+  <p class='register-info'>本人情報の登録について</p>
+</div>
+<% end %>
+
+<%= render "shared/second-footer"%>
+
