@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "users#index"
 
-  resources :tasks, only: [:new, :create]
+  resources :tasks, only: [:new, :create, :index]
 
 end

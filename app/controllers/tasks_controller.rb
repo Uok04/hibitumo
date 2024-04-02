@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
+    @tasks = Task.all
   end
 
   def new
